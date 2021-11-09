@@ -1,4 +1,5 @@
 # Plan the Day!
+
 ##Description
     *This is a simple calendar application that allows the user to save events for each hour of the day. 
     *The hour time slots will color code based on past, present, and future.

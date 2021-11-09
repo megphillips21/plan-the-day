@@ -1,12 +1,12 @@
-var nine = $("9");
-var ten = $("#hour10");
-var eleven = $("#hour11");
-var twelve = $("#hour12");
-var one = $("#hour13");
-var two = $("#hour14");
-var three = $("#hour15");
-var four = $("#hour16");
-var five = $("#hour17");
+var nine = $("#9");
+var ten = $("#10");
+var eleven = $("#11");
+var twelve = $("#12");
+var one = $("#13");
+var two = $("#14");
+var three = $("#15");
+var four = $("#16");
+var five = $("#17");
 
 var hour = moment().hours();
 var userInput;
@@ -32,6 +32,32 @@ var getStorage = function (){
     var get9 = JSON.parse(localStorage.getItem("9 AM"));
     console.log(get9);
     nine.val(get9);
+
+    var get10 = JSON.parse(localStorage.getItem("10 AM"));
+    console.log(get10);
+    ten.val(get10);
+
+    var get11 = JSON.parse(localStorage.getItem("11 AM"));
+    console.log(get11);
+    eleven.val(get11);
+
+    var get12 = JSON.parse(localStorage.getItem("12 PM"));
+    twelve.val(get12);
+
+    var get13 = JSON.parse(localStorage.getItem("1 PM"));
+    one.val(get13);
+
+    var get14 = JSON.parse(localStorage.getItem("2 PM"));
+    two.val(get14);
+
+    var get15 = JSON.parse(localStorage.getItem("3 PM"));
+    three.val(get15);
+
+    var get16 = JSON.parse(localStorage.getItem("4 PM"));
+    four.val(get16);
+
+    var get17 = JSON.parse(localStorage.getItem("5 PM"));
+    five.val(get17);
 }
 function setPage() {
     console.log("Current Hour " + hour);
@@ -61,5 +87,5 @@ $(".saveBtn").on("click", function () {
 })
 $("#clearDay").on("click", function(){
     localStorage.clear();
-    initPage()
+    getStorage()
   });
