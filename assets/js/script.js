@@ -12,7 +12,7 @@ var hour = moment().hours();
 var userInput;
 
 
-
+// retrieve current date and time from moment.js
 var currentDay = function () {
     currentDayEl = $("#currentDay");
     currentTimeEl = $("#currentTime");
@@ -27,6 +27,7 @@ var currentDay = function () {
 }
 currentDay()
 
+// retireve any event data from local storage
 var getStorage = function (){
 
     var get9 = JSON.parse(localStorage.getItem("9 AM"));
@@ -59,6 +60,8 @@ var getStorage = function (){
     var get17 = JSON.parse(localStorage.getItem("5 PM"));
     five.val(get17);
 }
+
+// color code time blocks based on current time
 function setPage() {
     console.log("Current Hour " + hour);
     $(function () {
@@ -78,6 +81,7 @@ function setPage() {
 setPage();
 getStorage()
 
+// when add button is clicked store event data into local storage
 $(".saveBtn").on("click", function () {
     userInput = $(this).siblings(".event-input").val().trim();
     
@@ -85,6 +89,8 @@ $(".saveBtn").on("click", function () {
    
     localStorage.setItem(addHour, JSON.stringify(userInput));
 })
+
+// clear day button that clears local storage and reloads the page
 $("#clearDay").on("click", function(){
     localStorage.clear();
     getStorage()
